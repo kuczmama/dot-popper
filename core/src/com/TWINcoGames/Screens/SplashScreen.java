@@ -16,32 +16,25 @@ package com.TWINcoGames.Screens;
 import com.TWINcoGames.DotPop;
 import com.TWINcoGames.Settings;
 import com.TWINcoGames.Helpers.Assets;
-import com.TWINcoGames.Helpers.ScreenHelper;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.TimeUtils;
 
 /**
  * @author Mark
  *
  */
-public class SplashScreen extends ScreenAdapter{
+public class SplashScreen extends AbstractScreen{
 	DotPop game;
-	private SpriteBatch batcher;
 	private Texture logo;
 	long time;
-	ScreenHelper screenHelper;
 
 
 	public SplashScreen(DotPop game){
 		this.game = game;
-		this.batcher = game.batcher;
 		Assets.load();
 		Settings.load();
-		screenHelper = new ScreenHelper();
 		time = TimeUtils.millis();
 		logo = new Texture(Gdx.files.internal("data/twinco_logo.png"));
 		
@@ -79,6 +72,16 @@ public class SplashScreen extends ScreenAdapter{
 	public void render(float delta) {
 		screenHelper.setBackgroundColor(Color.WHITE);
 		makeDelay(delta);
+	}
+
+
+	/* (non-Javadoc)
+	 * @see com.TWINcoGames.Screens.AbstractScreen#update()
+	 */
+	@Override
+	protected void update() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

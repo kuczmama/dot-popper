@@ -6,43 +6,29 @@ import com.TWINcoGames.DotPop;
 import com.TWINcoGames.Settings;
 import com.TWINcoGames.GameWorld.GameWorld;
 import com.TWINcoGames.Helpers.Assets;
-import com.TWINcoGames.Helpers.DrawShapes;
-import com.TWINcoGames.Helpers.DrawText;
 import com.TWINcoGames.Helpers.ScreenHelper;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.ScreenAdapter;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 
-public class MainScreen extends ScreenAdapter {
+public class MainScreen extends AbstractScreen {
 
 	public static ArrayList<String> welcomeArray = new ArrayList<String>();
 	//a rectangle to go the the rules screen
 	private Rectangle rulesBounds;
-	private DrawText drawer;
-	protected MainScreen mainScreen;
 	protected DotPop game;
-	private ScreenHelper screenHelper;
-	//to keep track of where the user touches'
-	DrawText textDrawer = new DrawText();
-	DrawShapes shapeDrawer;
 	private Texture highScoreButton;
 	private Texture playButton;
 	private Texture rulesButton;
 	private Texture soundOffButton;
 	private Texture soundOnButton;
-	
 	private final int BUTTON_DIAMETER = (Gdx.graphics.getWidth() < Gdx.graphics.getHeight())? (int)(Gdx.graphics.getWidth()/2): (int)(Gdx.graphics.getHeight()/2);
-	private SpriteBatch batcher;
 	private Rectangle playBounds;
 	private Rectangle soundBounds;
 	private Rectangle highScoreBounds;
 
 	public MainScreen(DotPop game) {
 		this.game = game;
-		batcher = game.batcher;
 		initialize();
 	}
 
@@ -66,10 +52,7 @@ public class MainScreen extends ScreenAdapter {
 		rulesButton = Assets.rulesButton;
 		soundOffButton = Assets.soundOffButton;
 		soundOnButton = Assets.soundOnButton;
-		
-		drawer = new DrawText();
 		screenHelper = new ScreenHelper();
-		shapeDrawer = new DrawShapes();
 		System.out.println("GameScreen Attached");
 	}
 
@@ -86,7 +69,7 @@ public class MainScreen extends ScreenAdapter {
 	/**
 	 * Update method to control what the current screen is
 	 */
-	private void update(){		
+	public void update(){		
 			//render the rules screen if the touch is within the ruleBounds
 			if(screenHelper.isTouching(rulesBounds)){
 				game.setScreen(new RulesScreen(game));

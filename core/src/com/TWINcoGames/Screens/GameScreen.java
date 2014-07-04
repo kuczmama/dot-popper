@@ -17,17 +17,13 @@ import com.TWINcoGames.DotPop;
 import com.TWINcoGames.GameWorld.GameRenderer;
 import com.TWINcoGames.GameWorld.GameWorld;
 import com.TWINcoGames.Helpers.InputHandler;
-import com.TWINcoGames.Helpers.ScreenHelper;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.ScreenAdapter;
-import com.badlogic.gdx.utils.TimeUtils;
 
 /**
  * @author Mark
  *
  */
-public class GameScreen extends ScreenAdapter{
-	ScreenHelper screenHelper;
+public class GameScreen extends AbstractScreen{
 	private GameWorld world;
 	private GameRenderer gameRenderer;
 	private DotPop game;
@@ -35,7 +31,6 @@ public class GameScreen extends ScreenAdapter{
 	
 	public GameScreen(DotPop game){
 		this.game = game;
-		screenHelper = new ScreenHelper();
 		world = new GameWorld(game);
 		gameRenderer = new GameRenderer(world);
 		Gdx.input.setInputProcessor(new InputHandler());
@@ -52,7 +47,7 @@ public class GameScreen extends ScreenAdapter{
 	/**
 	 * updates the current game screen state
 	 */
-	private void update() {
+	public void update() {
 		updateScreenState();
 		
 	}

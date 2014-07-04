@@ -13,37 +13,21 @@
 //*********************************************************
 package com.TWINcoGames.Screens;
 
-import sun.java2d.loops.DrawGlyphListAA;
-
 import com.TWINcoGames.DotPop;
-import com.TWINcoGames.ScreenComponents;
 import com.TWINcoGames.Settings;
 import com.TWINcoGames.Helpers.Assets;
-import com.TWINcoGames.Helpers.DrawText;
-import com.TWINcoGames.Helpers.ScreenHelper;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 /**
  * @author Mark
  *
  */
-public class HighScoreScreen extends ScreenAdapter{
+public class HighScoreScreen extends AbstractScreen{
 	private DotPop game;
-	private SpriteBatch batcher;
-	private ScreenHelper screenHelper;
-	private DrawText drawer;
-	private ScreenComponents screenComponents;
 	private Color fontColor;
 	
 	HighScoreScreen(DotPop game){
 		this.game = game;
-		this.batcher = game.batcher;
-		screenHelper = new ScreenHelper();
-		drawer = new DrawText();
-		screenComponents = new ScreenComponents();
 		fontColor = new Color(1f,1f,1f,1f);
 	}
 	
@@ -55,7 +39,7 @@ public class HighScoreScreen extends ScreenAdapter{
 		update();
 	}
 	
-	private void update(){
+	public void update(){
 		drawHighScores();
 		if(screenHelper.isTouching(screenComponents.backButtonBounds)){
 			game.setScreen(new MainScreen(game));

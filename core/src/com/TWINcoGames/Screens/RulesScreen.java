@@ -15,41 +15,22 @@
 package com.TWINcoGames.Screens;
 
 import com.TWINcoGames.DotPop;
-import com.TWINcoGames.ScreenComponents;
 import com.TWINcoGames.Helpers.Assets;
-import com.TWINcoGames.Helpers.DrawShapes;
-import com.TWINcoGames.Helpers.DrawText;
-import com.TWINcoGames.Helpers.ScreenHelper;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.glutils.FrameBuffer;
 
-public class RulesScreen extends ScreenAdapter{
+public class RulesScreen extends AbstractScreen{
 	private DotPop game;
-	private DrawText drawer;
-	private ScreenComponents screenComponents;
 	String rules = "rules";
-	ScreenHelper screenHelper;
 	
-	DrawShapes drawShape;
 	Texture rulesImage;
-	SpriteBatch batcher;
-	FrameBuffer frameBuffer = null;
 	float width = Gdx.graphics.getWidth();
 	float height = Gdx.graphics.getHeight();
 	
 
 	public RulesScreen(DotPop game) {
 		this.game = game;
-		screenComponents = new ScreenComponents();
-		drawer = new DrawText();
-		screenHelper = new ScreenHelper();
-		drawShape = new DrawShapes();
 		rulesImage = Assets.rulesImage;
-		batcher = game.batcher;
-		
 	}
 
 	@Override
@@ -64,13 +45,11 @@ public class RulesScreen extends ScreenAdapter{
 	/**
 	 * Update method to control what the current screen is
 	 */
-	private void update(){
-			
+	public void update(){
 			//render the rules screen if the touch is within the ruleBounds
 			if(screenHelper.isTouching(screenComponents.backButtonBounds)){
 				game.setScreen(new MainScreen(game));
 			}
-		
 	}
 	
 	

@@ -3,7 +3,6 @@ package com.TWINcoGames.GameWorld;
 
 import com.TWINcoGames.Helpers.Assets;
 import com.TWINcoGames.Helpers.DrawText;
-import com.TWINcoGames.sprites.Dot;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;

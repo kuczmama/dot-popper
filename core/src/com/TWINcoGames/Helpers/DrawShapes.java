@@ -9,11 +9,11 @@
 //
 // Date   : Jun 14, 2014
 //
-// Purpose:
+// Purpose:  Draw a given shape
 //*********************************************************
 package com.TWINcoGames.Helpers;
 
-import com.TWINcoGames.GameWorld.GameRenderer;
+
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;

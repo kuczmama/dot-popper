@@ -15,7 +15,6 @@
 package com.TWINcoGames;
 
 import com.TWINcoGames.Helpers.DrawText;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 
 /**
@@ -25,11 +24,9 @@ import com.badlogic.gdx.math.Rectangle;
 public class ScreenComponents {
 	public Rectangle backButtonBounds;
 	private DrawText drawer;
-	private SpriteBatch batcher;
 	
 	public ScreenComponents(){
 		drawer = new DrawText();
-		batcher = new SpriteBatch();
 		initialize();
 	}
 	

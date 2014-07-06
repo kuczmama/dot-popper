@@ -18,6 +18,7 @@ import com.TWINcoGames.GameWorld.GameRenderer;
 import com.TWINcoGames.GameWorld.GameWorld;
 import com.TWINcoGames.Helpers.InputHandler;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.math.Rectangle;
 
 /**
  * @author Mark

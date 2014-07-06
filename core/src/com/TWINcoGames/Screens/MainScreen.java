@@ -41,10 +41,10 @@ public class MainScreen extends AbstractScreen {
 	 */
 	private void initialize(){ 
 		getWelcomeMessage();
-		rulesBounds = new Rectangle(0,0,BUTTON_DIAMETER, BUTTON_DIAMETER);
-		playBounds = new Rectangle(0,BUTTON_DIAMETER,BUTTON_DIAMETER,BUTTON_DIAMETER);
-		soundBounds = new Rectangle(BUTTON_DIAMETER, 0, BUTTON_DIAMETER,BUTTON_DIAMETER);
-		highScoreBounds = new Rectangle(BUTTON_DIAMETER,BUTTON_DIAMETER,BUTTON_DIAMETER,BUTTON_DIAMETER);
+		rulesBounds = new Rectangle(Gdx.graphics.getWidth()/2f  - BUTTON_DIAMETER/2f -  BUTTON_DIAMETER/2f,Gdx.graphics.getHeight()/2f - BUTTON_DIAMETER/2f - BUTTON_DIAMETER/2f,BUTTON_DIAMETER, BUTTON_DIAMETER);
+		playBounds = new Rectangle(Gdx.graphics.getWidth()/2f  - BUTTON_DIAMETER/2f  -  BUTTON_DIAMETER/2f,Gdx.graphics.getHeight()/2f-BUTTON_DIAMETER/2.0f+BUTTON_DIAMETER/2f,BUTTON_DIAMETER,BUTTON_DIAMETER);
+		soundBounds = new Rectangle(Gdx.graphics.getWidth()/2f - BUTTON_DIAMETER/2 + BUTTON_DIAMETER/2f, Gdx.graphics.getHeight()/2f-BUTTON_DIAMETER/2.0f-BUTTON_DIAMETER/2f, BUTTON_DIAMETER,BUTTON_DIAMETER);
+		highScoreBounds = new Rectangle(Gdx.graphics.getWidth()/2f  - BUTTON_DIAMETER/2 + BUTTON_DIAMETER/2f,Gdx.graphics.getHeight()/2f-BUTTON_DIAMETER/2.0f+BUTTON_DIAMETER/2f,BUTTON_DIAMETER,BUTTON_DIAMETER);
 		
 		//initialize buttons
 		highScoreButton = Assets.highScoreButton;
@@ -105,14 +105,10 @@ public class MainScreen extends AbstractScreen {
 	 *  - rules button
 	 */
 	private void drawButtons(){
-		batcher.begin();
-		batcher.draw(rulesButton,rulesBounds.x,rulesBounds.y,rulesBounds.width,rulesBounds.height);
-		batcher.draw(playButton,playBounds.x,playBounds.y,playBounds.width,playBounds.height);
-		batcher.draw(highScoreButton,highScoreBounds.x,highScoreBounds.y,highScoreBounds.width,highScoreBounds.height);
-		
-		//draw the sound on button if the sound is on, the sound off button if the sound is off
-		batcher.draw((Settings.soundEnabled?soundOnButton: soundOffButton),soundBounds.x,soundBounds.y,soundBounds.width,soundBounds.height);
-		batcher.end();
+		drawShape.drawImageWithBounds(rulesButton, rulesBounds);
+		drawShape.drawImageWithBounds(playButton, playBounds);
+		drawShape.drawImageWithBounds(highScoreButton, highScoreBounds);
+		drawShape.drawImageWithBounds((Settings.soundEnabled?soundOnButton: soundOffButton),soundBounds);
 	}
 
 

@@ -61,10 +61,8 @@ public class GameWorld{
 
 	//update the game world
 	public void update(float delta) {
-		System.out.println("Dots size" + dots.size());
 		switch(STATE){
 		case PLAYING:
-			System.out.println("playin");
 			updateTime();
 			updateScoreString(); 
 			drawScoreAndTimeArray();

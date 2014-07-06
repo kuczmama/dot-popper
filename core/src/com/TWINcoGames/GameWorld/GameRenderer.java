@@ -71,7 +71,8 @@ public class GameRenderer{
 	 */
 	private void drawMainMenuAndResetButton() {
 		float space = Assets.font.getLineHeight();
-		resetButtonBounds = drawer.drawText("Play Again",gameOverStringBounds.x - 2*space, gameOverStringBounds.y - space);
+		float playAgainWidth = Assets.font.getBounds("Play Again").width;
+		resetButtonBounds = drawer.drawText("Play Again",Gdx.graphics.getWidth()/2f - playAgainWidth/2f - playAgainWidth/2f, gameOverStringBounds.y - space);
 		mainMenuButtonBounds = drawer.drawText("Main Menu",  resetButtonBounds.width + resetButtonBounds.x + space, gameOverStringBounds.y - space);
 	}
 	

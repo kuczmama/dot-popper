@@ -62,10 +62,9 @@ public class RulesScreen extends AbstractScreen{
 		batcher.begin();
 		//change the perspective based on lanscape or portrait mode
 		if(width < height){
-			batcher.draw(rulesImage,0,.25f*width,width,width);
+			batcher.draw(rulesImage,0,height/2f - width/2f,width,width);
 		} else {
-			batcher.draw(rulesImage,.25f*height,0,height,height);
-			
+			batcher.draw(rulesImage,width/2f - height/2f,0,height,height);
 		}
 		batcher.end();
 	}

@@ -19,6 +19,7 @@ import com.TWINcoGames.Helpers.DrawText;
 import com.TWINcoGames.Helpers.ScreenHelper;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 /**
  * @author Mark
@@ -30,6 +31,7 @@ public abstract class AbstractScreen  extends ScreenAdapter {
 	protected ScreenComponents screenComponents;
 	protected SpriteBatch batcher;
 	protected DrawShapes drawShape;
+	protected ShapeRenderer shapeRenderer;
 	
 	
 	protected AbstractScreen() {
@@ -38,6 +40,7 @@ public abstract class AbstractScreen  extends ScreenAdapter {
 		screenComponents = new ScreenComponents();
 		batcher = new SpriteBatch();
 		drawShape = new DrawShapes();
+		shapeRenderer = new ShapeRenderer();
 	}
 	
 	

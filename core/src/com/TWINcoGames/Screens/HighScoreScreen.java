@@ -60,6 +60,6 @@ public class HighScoreScreen extends AbstractScreen{
 		}
 		highScores[Settings.highscores.length] = "High Scores";
 		//draw the highscores
-		drawer.drawCenteredTextFromTopDown(Assets.font,highScores,fontColor);
+		drawer.drawCenteredList(Assets.font,highScores,fontColor);
 	}
 }

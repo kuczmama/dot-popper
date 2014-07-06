@@ -6,11 +6,9 @@ import com.TWINcoGames.DotPop;
 
 public class DesktopLauncher {
 	public static void main (String[] arg) {
-		
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-		config.title = "Dot Pop";
-		config.width = 900;
-		config.height = 600;
+		config.width = 400;
+		config.height = 800;
 		new LwjglApplication(new DotPop(), config);
 	}
 }
